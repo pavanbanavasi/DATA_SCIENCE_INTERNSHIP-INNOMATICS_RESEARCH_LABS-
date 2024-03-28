@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        .container {
+            text-align: center;
+            background-color: #f0f0f0; /* Ash color background */
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+            border: 2px solid; /* Default border */
+            border-color: black; /* Default border color */
+        }
+
+        .positive {
+            border-color: green; /* Green border for positive sentiment */
+        }
+
+        .negative {
+            border-color: red; /* Red border for negative sentiment */
+        }
+
+        .input-box {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: blue; /* Changed button color to blue */
+            color: white;
+            border: none;
+            padding: 15px 30px; /* Increased padding for larger button */
+            cursor: pointer;
+            font-size: 18px; /* Increased font size for larger button */
+        }
+
+        .submit-button.positive {
+            background-color: green; /* Green submit button for positive sentiment */
+        }
+
+        h2 {
+            font-size: 32px; /* Increased font size for result */
+            margin-top: 20px;
+        }
+
+        .result-container {
+            margin-top: 20px;
+        }
+
+        .positive-sentiment {
+            color: green;
+            font-size: 20px; /* Increased font size for result */
+        }
+
+        .negative-sentiment {
+            color: red;
+            font-size: 20px; /* Increased font size for result */
+        }
+
+        .input-label {
+            font-size: 20px; /* Increased font size for label */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form action="/predict" method="post" class="input-form">
+            <div class="input-box">
+                <label for="review" class="input-label">Enter your review:</label><br>
+                <textarea id="review" name="review" rows="4" cols="50"></textarea>
+            </div>
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+        {% if sentiment %}
+            <div class="result-container">
+                <h2 class="{{ sentiment }}">{{ sentiment }}</h2>
+                {% if sentiment == 'Positive' %}
+                    <p class="positive-sentiment">Review: {{ review }}</p>
+                    <p class="positive-sentiment">Predicted Sentiment: {{ sentiment }} 😃</p>
+                {% else %}
+                    <p class="negative-sentiment">Review: {{ review }}</p>
+                    <p class="negative-sentiment">Predicted Sentiment: {{ sentiment }} 😞</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
