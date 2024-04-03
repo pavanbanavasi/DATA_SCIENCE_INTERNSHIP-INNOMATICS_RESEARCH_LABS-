@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1711701643622
+current_stage: Production
+description: ''
+last_updated_timestamp: 1711701727094
+name: Sentiment_Analysis_experimentation
+run_id: 3ed9bf1fe28249d49939b5ffc6aae0c9
+run_link: ''
+source: file:///C:/Users/banav/Desktop/INTERNSHIP/ml_flow/mlruns/741706321559237835/3ed9bf1fe28249d49939b5ffc6aae0c9/artifacts/best_estimator
+status: READY
+status_message: null
+storage_location: file:///C:/Users/banav/Desktop/INTERNSHIP/ml_flow/mlruns/741706321559237835/3ed9bf1fe28249d49939b5ffc6aae0c9/artifacts/best_estimator
+user_id: null
+version: 3
